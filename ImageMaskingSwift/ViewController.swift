@@ -39,7 +39,6 @@ class ViewController: UIViewController {
         var maskedImage = UIImage(CGImage: maskedReference)
         
         return maskedImage!
-
     }
     
 }
