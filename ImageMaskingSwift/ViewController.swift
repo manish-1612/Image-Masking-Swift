@@ -32,7 +32,12 @@ class ViewController: UIViewController {
         var imageReference = image.CGImage
         var maskReference = mask.CGImage
         
-        var imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference), CGImageGetHeight(maskReference), CGImageGetBitsPerComponent(maskReference), CGImageGetBitsPerPixel(maskReference), CGImageGetBytesPerRow(maskReference), CGImageGetDataProvider(maskReference), nil, true)
+        var imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
+            CGImageGetHeight(maskReference),
+            CGImageGetBitsPerComponent(maskReference),
+            CGImageGetBitsPerPixel(maskReference),
+            CGImageGetBytesPerRow(maskReference),
+            CGImageGetDataProvider(maskReference), nil, true)
         
         var maskedReference = CGImageCreateWithMask(imageReference, imageMask)
         
