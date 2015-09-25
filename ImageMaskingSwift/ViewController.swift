@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var image = UIImage(named: "image.png")
-        var maskingImage = UIImage(named: "mask23.png")
+        let image = UIImage(named: "image.png")
+        let maskingImage = UIImage(named: "mask23.png")
         imageView.image = maskImage(image!, mask: maskingImage!)
     }
 
