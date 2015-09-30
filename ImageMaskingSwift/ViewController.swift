@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let image = UIImage(named: "image.png")
-        let maskingImage = UIImage(named: "mask23.png")
+        let image = UIImage(named: "image1.png")
+        let maskingImage = UIImage(named: "mask2.png")
         imageView.image = maskImage(image!, mask: maskingImage!)
     }
 
@@ -29,21 +29,21 @@ class ViewController: UIViewController {
     
     func maskImage(image:UIImage, mask:(UIImage))->UIImage{
         
-        var imageReference = image.CGImage
-        var maskReference = mask.CGImage
+        let imageReference = image.CGImage
+        let maskReference = mask.CGImage
         
-        var imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
+        let imageMask = CGImageMaskCreate(CGImageGetWidth(maskReference),
             CGImageGetHeight(maskReference),
             CGImageGetBitsPerComponent(maskReference),
             CGImageGetBitsPerPixel(maskReference),
             CGImageGetBytesPerRow(maskReference),
             CGImageGetDataProvider(maskReference), nil, true)
         
-        var maskedReference = CGImageCreateWithMask(imageReference, imageMask)
+        let maskedReference = CGImageCreateWithMask(imageReference, imageMask)
         
-        var maskedImage = UIImage(CGImage: maskedReference)
+        let maskedImage = UIImage(CGImage:maskedReference!)
         
-        return maskedImage!
+        return maskedImage
     }
     
 }
